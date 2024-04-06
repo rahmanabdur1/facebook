@@ -6,7 +6,7 @@ const Users = () => {
 
     useEffect(() => {
         // Fetch user data from the server
-        axios.get('http://server-alpha-taupe.vercel.app/users')
+        axios.get('https://server-alpha-taupe.vercel.app/users')
             .then(response => {
                 setUsers(response.data);
             })
