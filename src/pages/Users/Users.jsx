@@ -6,7 +6,7 @@ const Users = () => {
 
     useEffect(() => {
         // Fetch user data from the server
-        axios.get('https://server-alpha-taupe.vercel.app/users')
+        axios.get('http://server-alpha-taupe.vercel.app/users')
             .then(response => {
                 setUsers(response.data);
             })
@@ -16,6 +16,7 @@ const Users = () => {
     }, []);
 
     const deleteUser = async (userId) => {
+        console.log(userId,'u')
         try {
             await axios.delete(`https://server-alpha-taupe.vercel.app/users/${userId}`);
             setUsers(users.filter(user => user._id !== userId));
